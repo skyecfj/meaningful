@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    闭包：当一个函数里面，有一个匿名函数，匿名函数中，调用了父函数的变量，就会形成闭包
+
+    <script>
+        function f() {
+            var a=[];
+            for(var i=0;i<10;i++){
+//                a[i]=function () {
+//                    return i;
+//                }
+                a[i]=(function (i) {
+                    return function () {
+                        return i;
+                    }
+                })(i);
+            }
+            return a;
+        }
+        var arr=f();
+        console.log(arr[0]());
+    </script>
+</body>
+</html>

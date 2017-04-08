@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="cfj.js"></script>
+    <style>
+        #ku1{
+             width: 500px;
+             height: 300px;
+             border: 7px solid #940133;
+             border-radius: 15px;
+             position: absolute;
+             top: 50px;
+             left: 60px;
+         }
+        #ku2{
+            width: 500px;
+            height: 300px;
+            border: 7px solid #4169E6;
+            border-radius: 15px;
+            position: absolute;
+            top: 50px;
+            left: 800px;
+        }
+        #left{
+            outline: none;
+            width: 115px;
+            height: 40px;
+            border: 0px;
+            background: url("button1.png") -7px -5px;
+            position: absolute;
+            top: 130px;
+            left: 630px;
+        }
+        #right{
+            outline: none;
+            width: 115px;
+            height: 40px;
+            border: 0px;
+            background: url("button2.png") -3px -1px;
+            position: absolute;
+            top: 180px;
+            left: 630px;
+        }
+        #count1{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background: #4169E6;
+            position: absolute;
+            top: 240px;
+            left: 200px;
+            font: normal 20px/50px "宋体";
+            text-align: center;
+            color: #FFFFFF;
+        }
+        #count2{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background: #940133;
+            position: absolute;
+            top: 240px;
+            left: 200px;
+            font: normal 20px/50px "宋体";
+            text-align: center;
+            color: #FFFFFF;
+        }
+        #cx{
+            width: 277px;
+            height: 38px;
+            position: absolute;
+            background-color: #F0EEF1;
+            display: none;
+            border: 1px solid #C7CDC9;
+        }
+        #point1,#point2,#point3,#point4,#point5{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            background: #807F81;
+            position: absolute;
+            top: 280px;
+            left: 720px;
+        }
+        #point1{
+            background: #FEFE00;
+            left: 640px;
+        }
+        #point2{
+            left: 660px;
+        }
+        #point3{
+            left: 680px;
+        }
+        #point4{
+            left: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="point1"></div>
+    <div id="point2"></div>
+    <div id="point3"></div>
+    <div id="point4"></div>
+    <div id="point5"></div>
+    <div id="ku1">
+        <p id="wz1" width="500" height="200"  style="font: bold 20px/40px '宋体';">拍碎双玉斗，慷慨一何多！满腔都是血泪，无处着悲歌！三百年来王气，满目山河依旧，人事竟如何？百户尚牛酒，四塞已干戈。千金剑，万言策，两蹉跎。醉中呵壁自语，醒后一滂沱。不恨年华去也，只恐少年心事，强半为销磨。愿替众生病，稽首礼维摩。</p>
+        <span id="count1"><span id="count11">114</span>/114</span>
+    </div>
+    <div id="ku2">
+        <p id="wz2" width="500" height="200" style="font: bold 20px/40px '宋体';"></p>
+        <span id="count2"><span id="count21">0</span>/114</span>
+    </div>
+    <input type="button" id="left" name="left" >
+    <input type="button" id="right" name="right" >
+    <p id="cx">
+        <a href="" style="display: inline-block;width: 90px;height: 38px;border: 1px solid #C7CDC9;font: normal 18px/38px '宋体';color: #575757;position: absolute;text-decoration: none;text-align: center;">复制</a>
+        <a href="" style="display: inline-block;width: 185px;height: 38px;border: 1px solid #C7CDC9;font: normal 18px/38px '宋体';color: #575757;position: absolute;left: 91px;text-decoration: none;background: url('phone.png') no-repeat left bottom;">&nbsp;&nbsp;发放文字到手机</a>
+    </p>
+
+    <script>
+        var cx=document.getElementById("cx");
+        var ku1=document.getElementById("ku1");
+        var ku2=document.getElementById("ku2");
+
+
+        ku1.onmousedown=function (event) {
+            var e=event?event:window.event;
+            if(e.button==2){
+                document.oncontextmenu=function (ee) {
+                    if(ee){
+                        ee.preventDefault();
+                    }else if(window.event){
+                        ee=window.event;
+                        ee.returnValue=false;
+                        ee.preventDefault();
+                    }
+                }
+                cx.style.cssText="display:block;position:absolute;left:"+e.clientX+"px;top:"+e.clientY+"px;";
+            }
+        }
+        ku1.onmouseout=function () {
+            setTimeout(function () {
+                cx.style.display="none";
+            },400);
+        }
+
+        ku2.onmousedown=function (event) {
+            var e=event?event:window.event;
+            if(e.button==2){
+                document.oncontextmenu=function (ee) {
+                    if(ee){
+                        ee.preventDefault();
+                    }else if(window.event){
+                        ee=window.event;
+                        ee.returnValue=false;
+                        ee.preventDefault();
+                    }
+                }
+                cx.style.cssText="display:block;position:absolute;left:"+e.clientX+"px;top:"+e.clientY+"px;";
+            }
+        }
+        ku2.onmouseout=function () {
+            setTimeout(function () {
+                cx.style.display="none";
+            },400);
+        }
+
+        var left=document.getElementById("left");
+        var right=document.getElementById("right");
+        var wz1=document.getElementById("wz1");
+        var wz2=document.getElementById("wz2");
+        var str1=wz1.innerHTML;
+        var a=str1;
+        var str2=wz2.innerHTML;
+        var num=str1.length;
+        var num2=str2.length;
+        var count11=document.getElementById("count11");
+        var count21=document.getElementById("count21");
+
+        var point1=document.getElementById("point1");
+        point1.style.background="#FEFE00";
+
+        var point2=document.getElementById("point2");
+        point2.style.background="#807F81";
+
+        var point3=document.getElementById("point3");
+        point3.style.background="#FEFE00";
+
+        var point4=document.getElementById("point4");
+        point4.style.background="#807F81";
+
+        var point5=document.getElementById("point5");
+        point5.style.background="#FEFE00";
+
+        function star(n) {
+            if(n%2==0){
+                point1.style.background="#FEFE00";
+                point2.style.background="#807F81";
+                point3.style.background="#FEFE00";
+                point4.style.background="#807F81";
+                point5.style.background="#FEFE00";
+            }else{
+                point1.style.background="#807F81";
+                point2.style.background="#FEFE00";
+                point3.style.background="#807F81";
+                point4.style.background="#FEFE00";
+                point5.style.background="#807F81";
+            }
+
+        }
+
+
+        left.onclick=function () {
+            wz1.innerHTML = a;
+            wz2.innerHTML = "";
+            str1=wz1.innerHTML;
+            str2=wz2.innerHTML;
+            var interval = setInterval(function () {
+                num = (num + 1) % str1.length;
+                wz1.innerHTML = str1.substring(num, str1.length);
+                wz2.innerHTML = str1.substring(0, num);
+
+                star(num);
+
+                if(num==0){
+                    clearInterval(interval);
+                    wz1.innerHTML = "";
+                    wz2.innerHTML = str1;
+                }
+                count11.innerHTML=str1.length-num;
+                if(count11.innerHTML==str1.length){
+                    count11.innerHTML=0;
+                }
+                count21.innerHTML=num;
+                if(count21.innerHTML==0){
+                    count21.innerHTML=str1.length;
+                }
+            }, 100);
+
+        }
+
+
+        right.onclick=function () {
+            wz1.innerHTML = "";
+            wz2.innerHTML = str1;
+            str1=wz1.innerHTML;
+            str2=wz2.innerHTML;
+            var interval = setInterval(function () {
+                num2 = (num2 + 1) % str2.length;
+                wz2.innerHTML = str2.substring(num2, str2.length);
+                wz1.innerHTML = str2.substring(0, num2);
+
+                star(num2);
+
+                if(num2==0){
+                    clearInterval(interval);
+                    wz2.innerHTML = "";
+                    wz1.innerHTML = str2;
+                }
+                count21.innerHTML=str2.length-num2;
+                if(count21.innerHTML==str2.length){
+                    count21.innerHTML=0;
+                }
+                count11.innerHTML=num2;
+                if(count11.innerHTML==0){
+                    count11.innerHTML=str2.length;
+                }
+            }, 100);
+
+        }
+
+    </script>
+</body>
+</html>

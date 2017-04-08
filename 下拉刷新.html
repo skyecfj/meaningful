@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin:0px auto;
+            padding:0px;
+        }
+        *{
+            margin:0px auto;
+            padding:0px;
+        }
+        #mainContent{
+            margin-top:20px;
+            width:200px;
+            height:300px;
+            border:1px solid #ccc;
+            overflow:scroll;
+        }
+        .mycontent{
+            width:100%;
+            height:100%;
+        }
+        #slideDown1{
+            width:100%;
+            height:20px;
+            background:#3CF;
+        }
+        #slideDown1 p{
+            text-align:center;
+            font-size:14px;
+
+        }
+        li{
+            list-style-type:none;
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+<div id="mainContent">
+    <div class="myContent">
+        <ul>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+            <li>item1-item-1-itemt1</li>
+        </ul>
+    </div>
+    <div id="slideDown1" style="display:none">
+        <p>加载中，请稍后....</p>
+    </div>
+</div>
+
+<script>
+    var obj=document.getElementById("mainContent");
+    var sd=document.getElementById("slideDown1");
+    obj.onscroll=function () {
+        if(obj.scrollTop+obj.clientHeight==obj.scrollHeight){
+            sd.style.display="block";
+            window.setTimeout(add,1000);
+        }
+    }
+
+    function add() {
+        var newDiv=document.createElement("div");
+        var ul=document.createElement("ul");
+        for(var i=0;i<16;i++){
+            var li=document.createElement("li");
+            li.innerHTML="item"+i+"-item-"+i+"-item-"+i;
+            ul.appendChild(li);
+        }
+        newDiv.appendChild(ul);
+        obj.insertBefore(newDiv,sd);
+    }
+</script>
+
+</body>
+</html>

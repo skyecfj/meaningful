@@ -1,0 +1,155 @@
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+	text-align:center;
+}
+
+.xiborder{
+	border:1px solid #0000FF;
+}
+
+.err{
+    color:red;
+    font-size:12px;
+	padding-left:30px;
+	background:url(images/onError.gif) no-repeat;
+}
+   
+.ok{
+    color:green;
+    font-size:12px;
+	padding-left:30px;
+	background:url(images/onCorrect.gif) no-repeat;
+}
+
+.tishi{
+    font-size:12px;
+	padding-left:30px;
+	background:url(images/onFocus.gif) no-repeat;
+}
+
+select{
+	border:1px solid #0000FF;
+}
+
+
+img{
+	border:0;
+}
+
+td{
+	font-size:12px;
+	color:#414141;
+	line-height:22px;
+	vertical-align:middle;
+}
+
+.white {
+	color: #FFFFFF
+}
+
+a{
+	color:#414141;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#ff7000;
+	text-decoration:none;
+}
+
+.a-white{
+	padding-top:0px;
+    color:#FFFFFF;
+	text-decoration:none;
+}
+.a-white:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.btn{
+    border:1 #cccccc solid;
+	background-color:#dfdfdf;
+	width:50px;
+	text-align:center;
+	padding-top:3px;
+	height:22px;
+	font-size:12px;
+}
+
+.main{
+     padding-top:10px;
+	 padding-bottom:10px;
+	 width:1000px;
+}
+
+.register{
+	padding-top:30px;
+    padding-bottom:30px;
+}
+
+.register-bold{
+	font-size:14px;
+	font-weight:bold;
+	color:#666666;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.register-input{
+	border-left:1 #666666 solid;
+	border-top:1 #666666 solid;
+	border-right:1 #cccccc solid;
+	border-bottom:1 #cccccc solid;
+	width:160px;
+	height:22px;
+	border:1px solid #CC6600;
+}
+
+.register-td{
+	width:70px;
+	text-align:right;
+	padding-right:10px;
+	height:30px;
+}
+
+.register-over{
+	background-image:url(images/register-sm1.gif);
+	width:127px;
+	height:39px;
+	overflow:hidden;
+	border:0;
+}
+
+.register-out{
+	background-image:url(images/register-sm2.gif);
+	width:127px;
+	height:39px;
+	overflow:hidden;
+	border:0;
+}
+
+
+.search-top{
+	position:absolute;
+	display:none;
+	width:400px;
+	border-bottom:2 #ff7000 solid;
+	background-color:#fffff7;
+	z-index:1;
+}
+
+.search-menu{
+    color:#ffffff;
+    padding-top:4px;
+    background-image:url(images/bottom-bg.gif);
+    height:30px;
+    overflow:hidden;
+	padding-left:12px;
+	text-align:left;
+	z-index:6;
+}

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>注册界面</title>
+	<link href="register.css" type="text/css" rel="stylesheet" />
+	<script src="cfj.js" type="text/javascript"></script>
+</head>
+
+<body onLoad="init()">
+<center>
+<div class="main">
+    <!--用户注册开始-->
+    <div class="register">
+    	<table width="857" border="0" cellspacing="0" cellpadding="0">
+     		<tr>
+        		<td><img src="images/register-top.gif"></td>
+      		</tr>
+      		<tr>
+        	<td>
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+            		<tr>
+              			<td background="images/register-line.gif" width="3"></td>
+              			<td>
+              				<form action="http://www.baidu.com" method="post" name="myform" onSubmit="return checkregister()" >
+                 				<input type="hidden" name="op" value="doregister"/>
+                  				<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+                    				<tr>
+                      					<td class="register-bold">会员信息：<img src="images/dot_line_1.gif" align="absmiddle"></td>
+                    				</tr>
+                    				<tr>
+                     					<td>
+                                        	<table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
+                          					<tr>
+                            					<td width="30"><img src="images/register-arrow.gif"></td>
+                            					<td class="register-td">会&nbsp;&nbsp;员&nbsp;&nbsp;名：</td>
+                            					<td><input name="username" id="username" type="text" class="register-input" onBlur="checkname(this,'check2')" ></td>
+                            					<td align="left"><div id="check2" class="tishi">会员名以字母或汉字开头，由3-18位的数字、字母、下划线、汉字组成</div></td>
+                          					</tr>
+                           					<tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">真实姓名：</td>
+                                                <td><input name="myname" id="myname" type="text" class="register-input"  onBlur="checkmyname(this,'mydivname')"></td>
+                                                <td align="left"><div id="mydivname" class="tishi">请输入您的真实姓名</div></td>
+                                            </tr>
+                                            <TR>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+                                                <td><input name="psw" id="psw" type="password" class="register-input" onBlur="showpwd()"></td>
+                                                <td align="left"><div id="fpwd" class="tishi">密码由6-16位的数字、字母、下划线组成</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">重复密码：</TD>
+                                                <td><input name="repeatpsw" id="repeatpsw" type="password" class="register-input" onBlur="checkrpwd(psw,repeatpsw,'frepeatpwd')"></td>
+                                                <td align="left"><div id="frepeatpwd" class="tishi">两次输入的密码必须一致</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                                                <td><span class="register-input" style="border:0px;">
+                                                  <input name="sex" id="sex"  type="radio" value="男" checked  onclick="showsex(this,'mydivsex')">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                  <input name="sex" type="radio"  id="sex" value="女" onclick="showsex(this,'mydivsex')">女</span></td>
+                                                <td align="left"><div id="mydivsex" class="tishi">请选择您的性别</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">证&nbsp;&nbsp;件&nbsp;&nbsp;号：</td>
+                                                <td><input name="mytypeid" id="mytypeid" type="text" class="register-input" onBlur="checktypeid(this,'mydivtypeid')"></td>
+                                                <td align="left"><div id="mydivtypeid" class="tishi">请输入您的有限证件号</div></td>
+                                            </tr>
+                                            <tr>
+                                              <td width="15"><IMG src="images/register-arrow.gif"></td>
+                                              <td class="register-td">E-mail：&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                              <td width="180"><input name="email" id="email" type="text" class="register-input" onBlur="checkemail(this,'check1')"></td>
+                                              <td align="left"><div id="check1" class="tishi">请填写常用电子邮件</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">联系方式：</td>
+                                                <td><input name="mytelphone" id="mytelphone" type="text" class="register-input" onBlur="checktel(this,'mydivtel')"></td>
+                                                <td align="left"><div id="mydivtel" class="tishi">请输入您的常用联系方式</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</td>
+                                                <td><span>
+                                                  <select id="sheng" name="sheng" style="width:160px;border:1px solid #0000FF;" onBlur="showsheng(this,'mydivsheng')" onchange="changeCity(this.value)">
+														<option>--请选择--</option>
+                                                  </select>
+                                                  </span></td>
+                                                <td align="left"><div id="mydivsheng" class="tishi">请选择您所在的省份</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="30"><img src="images/register-arrow.gif"></td>
+                                                <td class="register-td">城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市：</td>
+                                                <td><span>
+                                                  <select id="shi" name="shi" style="width:160px;border:1px solid #0000FF;" onBlur="showshi(this,'mydivshi')">
+                                                    <option>--请选择城市--</option>
+                                                  </select>
+                                                  </span></td>
+                                                <td align="left"><div id="mydivshi" class="tishi">请选择您所在的城市</div></td>
+                                            </tr>
+                       					</table>
+                                    </td>
+                    			</tr>
+                    			<tr>
+                     				<td><div class="register-bold"><img src="images/dot_line_2.gif" align="absmiddle"></div>
+                        				<div align="center">
+                          					<input name="B1" type="submit" value="&nbsp;" class="register-out" onMouseOver="this.className='register-over'" onMouseOut="this.className='register-out'">
+                        				</div>
+                                    </td>
+                    			</tr>
+                  			</table>
+               			</form>
+                    </td>
+              		<td background="images/register-line.gif" width="3"></TD>
+            	</tr>
+         	</table>
+          </td>
+      </tr>
+      <tr>
+        <td><img src="images/register-bottom.gif"></TD>
+      </tr>
+    </table>
+  </div>
+  
+</div>
+</center>
+
+<script>
+    function checkname(){
+        var username=$("#username");
+        var str1=username.value;
+        var check2=$("#check2");
+        var reg1=/^[\u4e00-\u9fa5a-zA-Z]\w{2,17}$/;
+        if(reg1.test(str1)){
+            check2.innerHTML="您的会员名真好听";
+        }else {
+            check2.innerHTML="会员名不合法";
+        }
+    }
+
+    function checkmyname(){
+        var myname=$("#myname");
+        var str2=myname.value;
+        var mydivname=$("#mydivname");
+        var reg2=/^[\u4e00-\u9fa5]{2,7}$/;
+        if(reg2.test(str2)){
+            mydivname.innerHTML="您的名字真好听";
+            return true;
+        }else {
+            mydivname.innerHTML="妈蛋，你到底叫啥名";
+            return false;
+        }
+    }
+
+
+    function showpwd() {
+        var psw=$("#psw");
+        var str3=psw.value;
+        var fpwd=$("#fpwd");
+        var reg3=/^\w{6,16}$/;
+        if(reg3.test(str3)){
+            fpwd.innerHTML="密码合法";
+        }else {
+            fpwd.innerHTML="密码不合法，请重新输入";
+        }
+    }
+
+    function checkrpwd(){
+        var psw=$("#psw");
+        var str3=psw.value;
+        var repeatpsw=$("#repeatpsw");
+        var str4=repeatpsw.value;
+        var frepeatpwd=$("#frepeatpwd");
+        for(var i in str4){
+            if(str4[i]==str3[i]){
+                frepeatpwd.innerHTML="密码正确";
+            }else {
+                frepeatpwd.innerHTML="两次密码输入不一致";
+            }
+        }
+    }
+
+
+    function checktypeid(){
+        var mytypeid=$("#mytypeid");
+        var str5=mytypeid.value;
+        var mydivtypeid=$("#mydivtypeid");
+        var reg5=/^\d{17}[1-9X]$/;
+        if(reg5.test(str5)){
+            mydivtypeid.innerHTML="证件号合法";
+        }else {
+            mydivtypeid.innerHTML="证件号不合法，请重新输入";
+        }
+    }
+
+    function checkemail(){
+        var email=$("#email");
+        var str6=email.value;
+        var check1=$("#check1");
+        var reg6=/^[0-9a-zA-Z]+(?:[\.\!\#\$\%\^\&\*\'\+\-\/\`\_\{\|\}\~]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9\-]+\.[0-9a-zA-Z\-]+$/;
+        if(reg6.test(str6)){
+            check1.innerHTML="电子邮件合法";
+        }else {
+            check1.innerHTML="电子邮件不合法，请重新输入";
+        }
+    }
+
+    function checktel() {
+        var mytelphone=$("#mytelphone");
+        var str7=mytelphone.value;
+        var mydivtel=$("#mydivtel");
+        var reg7=/^[1]\d{10}$/;
+        if(reg7.test(str7)){
+            mydivtel.innerHTML="联系方式合法";
+        }else {
+            mydivtel.innerHTML="联系方式不合法，请重新输入";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态时钟</title>
+    <style type="text/css">
+        body{
+            font-family: "微软雅黑";
+            font-size: 12pt;
+        }
+    </style>
+    <script type="text/javascript">
+        setInterval("JsTimer()",1000); //设置每秒钟执行一次JsTimer()函数
+        function JsTimer() {
+            var ClockTime=new Date();//创建事件对象
+            var ClockHours=ClockTime.getHours();//获得小时
+            var ClockMinutes=ClockTime.getMinutes();//获得分
+            var ClockSeconds=ClockTime.getSeconds();//获得秒
+            //如果<=9前面就加个0
+            if(ClockHours<=9){
+                ClockHours="0"+ClockHours;
+            }
+            if(ClockMinutes<=9){
+                ClockMinutes="0"+ClockMinutes;
+            }
+            if(ClockSeconds<=9){
+                ClockSeconds="0"+ClockSeconds;
+            }
+            //把时间写入到ID为JsClock的标签中
+            JsClock.innerHTML=ClockHours+":"+ClockMinutes+":"+ClockSeconds;
+        }
+    </script>
+</head>
+<body>
+    这是一个html网页
+    <br>
+    <!--显示时钟的HTML标签-->
+    <span id="JsClock"></span>
+</body>
+</html>
